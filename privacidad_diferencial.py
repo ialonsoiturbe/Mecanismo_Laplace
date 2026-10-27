@@ -34,7 +34,9 @@ print("IBM diffprivlib:", resultado_ibm)
 print("OpenDP:", resultado_opendp)
 print("Epsilon de OpenDP:", epsilon)
 
-### Casos distintos niveles de privacidad
+############################################################
+
+# casos distintos niveles de privacidad
 import numpy as np
 
 def mecanismo_laplace(valor, sensibilidad, epsilon):
@@ -42,6 +44,7 @@ def mecanismo_laplace(valor, sensibilidad, epsilon):
     ruido = np.random.laplace(0, escala)
     return valor + ruido
 
+# el resultado real de una consulta estadística antes de añadir ruido:
 conteo_real = 250
 
 for epsilon in [0.1, 0.5, 1, 2]:
