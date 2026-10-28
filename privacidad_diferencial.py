@@ -6,7 +6,7 @@ ibm = Laplace(
     sensitivity=1.0
 )
 
-resultado_ibm = ibm.randomise(65)
+resultado_ibm = ibm.randomise(200)
 
 
 # OpenDP
@@ -24,12 +24,12 @@ opendp = dp.m.make_laplace(
     scale=2.0
 )
 
-resultado_opendp = opendp(65.0)
+resultado_opendp = opendp(200.0)
 epsilon = opendp.map(d_in=1.0)
 
 
 # Resultados
-print("Resultado original:", 65)
+print("Resultado original:", 200)
 print("IBM diffprivlib:", resultado_ibm)
 print("OpenDP:", resultado_opendp)
 print("Epsilon de OpenDP:", epsilon)
@@ -45,7 +45,7 @@ def mecanismo_laplace(valor, sensibilidad, epsilon):
     return valor + ruido
 
 # el resultado real de una consulta estadística antes de añadir ruido:
-conteo_real = 250
+conteo_real = 200
 
 for epsilon in [0.1, 0.5, 1, 2]:
     resultado = mecanismo_laplace(
