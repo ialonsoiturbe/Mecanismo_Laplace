@@ -36,7 +36,7 @@ print("Epsilon de OpenDP:", epsilon)
 
 ############################################################
 
-# casos distintos niveles de privacidad
+# Distintos niveles de privacidad
 import numpy as np
 
 def mecanismo_laplace(valor, sensibilidad, epsilon):
